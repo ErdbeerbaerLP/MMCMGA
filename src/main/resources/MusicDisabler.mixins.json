@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.erdbeerbaerlp.mmcmga.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "MixinSoundRegistration",
+    "MixinTest"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
