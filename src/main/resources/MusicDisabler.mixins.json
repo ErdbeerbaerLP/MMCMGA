@@ -6,8 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "MixinSoundRegistration",
-    "MixinTest"
+    "MixinSoundRegistration"
   ],
   "injectors": {
     "defaultRequire": 1
