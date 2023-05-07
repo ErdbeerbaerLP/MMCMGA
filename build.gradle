@@ -56,7 +56,7 @@ modrinth {
         versionName = "Make Minecraft Music Great Again $version (MC 23w18a)"
         uploadFile = remapJar
         changelog = project.changelog
-        gameVersions = ['23w1a']
+        gameVersions = ['23w18a']
         loaders = ["fabric"]
         versionType = "RELEASE"
     }
