@@ -3,8 +3,8 @@
   "id": "mmcmga",
   "version": "${version}",
   "name": "Make Minecraft Music Great Again",
-  "description": "",
-  "authors": [],
+  "description": "This small mods removes all of Lena Raine's randomly playing music tracks, for all of those who think that it does not fit into the game. Music Discs are untouched by this mod",
+  "authors": ["ErdbeerbaerLP"],
   "contact": {
     "repo": "https://github.com/erdbeerbaerlp/MMCMGA"
   },
