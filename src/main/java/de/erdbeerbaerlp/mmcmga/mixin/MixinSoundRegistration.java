@@ -36,6 +36,8 @@ public class MixinSoundRegistration {
                 case "music/game/nether/nether_wastes/rubedo":
                 case "music/game/nether/crimson_forest/chrysopoeia":
                 case "music/game/swamp/aerie":
+                case "music/game/swamp/firebugs":
+                case "music/game/swamp/labyrinthine":
                     continue;
                 default:
                     filteredSounds.add(sound);

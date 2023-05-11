@@ -38,7 +38,7 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-    archivesBaseName = project.archives_base_name
+    archivesBaseName = project.archives_base_name + "-" + project.minecraft_version
 }
 
 jar {
@@ -53,10 +53,10 @@ modrinth {
         token = getProperty("modrinth.apikey") // Use an environment property!
         projectId = 'PYmVLddY'
         versionNumber = version
-        versionName = "Make Minecraft Music Great Again $version (MC 23w18a)"
+        versionName = "Make Minecraft Music Great Again $version (MC 1.20-pre1)"
         uploadFile = remapJar
         changelog = project.changelog
-        gameVersions = ['23w18a']
+        gameVersions = ['1.20-pre1']
         loaders = ["fabric"]
         versionType = "RELEASE"
     }
