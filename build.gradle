@@ -67,7 +67,7 @@ modrinth {
         token = getProperty("modrinth.apikey") // Use an environment property!
         projectId = 'PYmVLddY'
         versionNumber = version
-        versionName = "Make Minecraft Music Great Again $version (MC $minecraft_version)"
+        versionName = "Make Minecraft Music Great Again $version (MC $minecraft_version Forge)"
         uploadFile = jar
         changelog = project.changelog
         gameVersions = ['1.20.1', '1.20.2']
