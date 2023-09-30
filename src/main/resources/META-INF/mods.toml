@@ -18,12 +18,12 @@ displayURL = "https://modrinth.com/mod/mmcmga" #optional
 authors = "ErdbeerbaerLP" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-This small mods removes all of Lena Raine's randomly playing music tracks, for all of those who think that it does not fit into the game. Music Discs are untouched by this mod
+This small mods removes all of Lena Raine's randomly playing music tracks, for all of those who think that it doesn't fit into the game. Music Discs are untouched by this mod
 '''
 [[dependencies.mmcmga]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,1.21)"
+versionRange = "[1.20,]"
 ordering = "NONE"
 side = "CLIENT"
 [[dependencies.mmcmga]]

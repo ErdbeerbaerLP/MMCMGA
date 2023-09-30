@@ -2,21 +2,26 @@ package de.erdbeerbaerlp.mmcmga.mixin;
 
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.resources.sounds.SoundEventRegistration;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Mixin(SoundEventRegistration.class)
+@Mixin(value = SoundEventRegistration.class)
 public class MixinSoundRegistration {
-    @Inject(method = "getSounds", cancellable = true, at = @At(value = "RETURN", target = "Lnet/minecraft/client/resources/sounds/SoundEventRegistration;sounds:Ljava/util/List;"))
-    public void getSounds(CallbackInfoReturnable<List<Sound>> cir) {
-        final List<Sound> allSounds = cir.getReturnValue();
+    @Shadow @Final
+    private List<Sound> sounds;
+    @Inject(method = "<init>", at = @At(value = "TAIL"))
+    public void getSounds(List p_119819_, boolean p_119820_, String p_119821_, CallbackInfo ci) {
         final ArrayList<Sound> filteredSounds = new ArrayList<>();
-        for (Sound sound : allSounds) {
+        for (Sound sound : sounds) {
             switch (sound.getLocation().getPath()) {
                 case "music/game/a_familiar_room":
                 case "music/game/bromeliad":
@@ -43,6 +48,7 @@ public class MixinSoundRegistration {
                     filteredSounds.add(sound);
             }
         }
-        cir.setReturnValue(filteredSounds);
+        sounds.clear();
+        sounds.addAll(filteredSounds);
     }
 }
