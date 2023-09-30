@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 /**
  * Class used to log all resource locations of registered sounds, used for finding new ones
  */
-@Mixin(targets = "net.minecraft.client.sounds.SoundManager.Preparations")
+@Mixin(targets = "net.minecraft.client.sounds.SoundManager.Preparations", remap = false)
 public class MixinTest {
     @Redirect(method = "handleRegistration", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/sounds/Sound;getLocation()Lnet/minecraft/resources/ResourceLocation;"))
     private ResourceLocation test(Sound instance) {
